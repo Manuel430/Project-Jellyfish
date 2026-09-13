@@ -4,8 +4,6 @@ using UnityEngine.InputSystem;
 public class JellineMovement : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] Transform wallCheck;
-    [SerializeField] LayerMask wallLayer;
     PlayerControlsScript playerControls;
     Rigidbody2D rb;
 
@@ -61,8 +59,6 @@ public class JellineMovement : MonoBehaviour
         playerControls.Player.Jump.canceled += Jump;
 
         playerControls.Player.Twirl.performed += Twirl;
-
-        wallCheck.gameObject.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -113,7 +109,6 @@ public class JellineMovement : MonoBehaviour
     {
         isTwirling = true;
         twirlTimer = 0f;
-        wallCheck.gameObject.SetActive(true);
         while (twirlTimer < twirlTime)
         {
             if (isKnockback)
@@ -129,16 +124,12 @@ public class JellineMovement : MonoBehaviour
             yield return null;
         }
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        wallCheck.gameObject.SetActive(false);
         isTwirling = false;
     }
 
     // Debugging
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.blue;
-
-        Gizmos.DrawWireCube(wallCheck.position, new Vector2(0.5f, 1.8f));
         // Draw a line to represent the movement direction
     }
 }
