@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 4207955393598588810}
   - component: {fileID: 3864503112087767358}
   - component: {fileID: 3764816827083568103}
+  - component: {fileID: 697712220266096593}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -197,7 +198,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4, y: 2}
+  m_Size: {x: 1.4, y: 1.98}
   m_EdgeRadius: 0
 --- !u!114 &3764816827083568103
 MonoBehaviour:
@@ -217,6 +218,25 @@ MonoBehaviour:
   twirlPower: 15
   twirlTime: 0.2
   isKnockback: 0
+  knockbackForce: 10
+  knockbackTimer: 0
+  knockbackTime: 0.1
+  isKnockbackFromRight: 0
+  isKnockbackFromTop: 0
+--- !u!114 &697712220266096593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691750267370294283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1417eccd59377439678893b425259b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JellineHealth
+  health: 0
+  maxHealth: 10
 --- !u!1 &7341179901932792569
 GameObject:
   m_ObjectHideFlags: 0

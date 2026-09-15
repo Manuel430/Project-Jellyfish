@@ -22,7 +22,11 @@ public class JellineMovement : MonoBehaviour
 
     [Header ("Knockback")]
     [SerializeField] bool isKnockback;
-    //Work out Knockback logic later
+    [SerializeField] float knockbackForce;
+    [SerializeField] float knockbackTimer;
+    [SerializeField] float knockbackTime;
+    [SerializeField] bool isKnockbackFromRight;
+    [SerializeField] bool isKnockbackFromTop;
 
     #region Public Properties
     public void StartMoving()
@@ -42,6 +46,26 @@ public class JellineMovement : MonoBehaviour
     public void HitBouncyObject()
     {
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    public bool IsTwirling()
+    {
+        return isTwirling;
+    }
+
+    public void SetKBTimer()
+    {
+        knockbackTimer = knockbackTime;
+    }
+
+    public void SetKnockbackFromRight(bool value)
+    {
+        isKnockbackFromRight = value;
+    }
+
+    public void SetKnockbackFromTop(bool value)
+    {
+        isKnockbackFromTop = value;
     }
     #endregion
 
@@ -63,16 +87,49 @@ public class JellineMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isTwirling) { return; }
+        if(knockbackTimer <= 0)
+        {
+            if(isTwirling) { return; }
 
-        rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
+        }
+        else
+        {
+            if (isKnockbackFromRight)
+            {
+                if (isKnockbackFromTop)
+                {
+                    rb.linearVelocity = new Vector2(-knockbackForce, knockbackForce);
+                }
+                else
+                {
+                    rb.linearVelocity = new Vector2(-knockbackForce, knockbackForce);
+                }
+            }
+            else
+            {
+                if (isKnockbackFromTop)
+                {
+                    rb.linearVelocity = new Vector2(knockbackForce, knockbackForce);
+                }
+                else
+                {
+                    rb.linearVelocity = new Vector2(knockbackForce, knockbackForce);
+                }
+            }
+
+            knockbackTimer -= Time.fixedDeltaTime;
+        }
     }
+
+    private void Flip() { transform.localScale = new Vector3(Mathf.Sign(horizontal), 1f, 1f); }
 
     private void Move(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             horizontal = context.ReadValue<Vector2>().x;
+            Flip();
         }
         else if(context.canceled)
         {
@@ -119,7 +176,8 @@ public class JellineMovement : MonoBehaviour
             {
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
             }
-            rb.linearVelocityX = twirlPower;
+            
+            rb.linearVelocityX = twirlPower * transform.localScale.x;
             twirlTimer += Time.deltaTime;
             yield return null;
         }
