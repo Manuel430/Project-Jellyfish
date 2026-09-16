@@ -12,7 +12,7 @@ public class RoomManagement : MonoBehaviour
 
     private void Awake()
     {
-        virtualCamera.SetActive(false);
+        //virtualCamera.SetActive(false);
 
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
