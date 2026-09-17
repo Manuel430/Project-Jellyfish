@@ -1,37 +1,10 @@
 fileFormatVersion: 2
-guid: 3e7292b4f29a30346abf5f6b3273e95a
+guid: 5df96f711dff2114693410036cb1d343
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3181614918318002740
-    second: Jelline_SpriteSheet_0
-  - first:
-      213: 4015199094774562752
-    second: Jelline_SpriteSheet_1
-  - first:
-      213: 6939455517483625073
-    second: Jelline_SpriteSheet_2
-  - first:
-      213: 7390920726171224795
-    second: Jelline_SpriteSheet_3
-  - first:
-      213: 53606168709869316
-    second: Jelline_SpriteSheet_4
-  - first:
-      213: 5044283520961567018
-    second: Jelline_SpriteSheet_5
-  - first:
-      213: -484537163284251639
-    second: Jelline_SpriteSheet_6
-  - first:
-      213: 7956645755372501029
-    second: Jelline_SpriteSheet_7
-  - first:
-      213: 2428082384721574277
-    second: Jelline_SpriteSheet_8
-  - first:
-      213: -3521456549096709144
-    second: Jelline_SpriteSheet_9
+      213: -8854454983117964916
+    second: Specials_SpriteSheet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -78,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 160
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jelline_SpriteSheet_0
+      name: Specials_SpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 32
-        height: 32
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,108 +115,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4329d6a49ed572c20800000000000000
-      internalID: 3181614918318002740
+      spriteID: c89f0931b18ae1580800000000000000
+      internalID: -8854454983117964916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelline_SpriteSheet_1
+      name: Specials_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b723058676ff454191cea5122bba511
+      internalID: 356755616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Specials_SpriteSheet_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0cff182ad4ad8b730800000000000000
-      internalID: 4015199094774562752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelline_SpriteSheet_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17a6c3eb606ed4060800000000000000
-      internalID: 6939455517483625073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelline_SpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bda028edd33d19660800000000000000
-      internalID: 7390920726171224795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelline_SpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 40fa8b3c6827eb000800000000000000
-      internalID: 53606168709869316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelline_SpriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e382268436d52d14c9afac7076babb25
-      internalID: 5044283520961567018
+      spriteID: bad86c6993943434d9c0539ee16eb77e
+      internalID: 166212153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelline_SpriteSheet_6
+      name: Specials_SpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
+        x: 48
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,86 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c68c8344bd6963a44b649a787834a2d3
-      internalID: -484537163284251639
+      spriteID: f3a18d34c3367cd4ca5cb6f25f54dbb5
+      internalID: 1294692822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelline_SpriteSheet_7
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36cdc0f21165f434aba74a097f84e8ae
-      internalID: 7956645755372501029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelline_SpriteSheet_8
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c4c8f8068ab34b419a304761423916a
-      internalID: 2428082384721574277
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelline_SpriteSheet_9
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57eb112e7c335da46927c0cc12249512
-      internalID: -3521456549096709144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelline_SpriteSheet_10
+      name: Specials_SpriteSheet_4
       rect:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,20 +203,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 746525a706ac4044b9151b0122845218
-      internalID: -1427129971
+      spriteID: c2ddc2101a8f05742a2c68fd3f8fa56f
+      internalID: -476665492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelline_SpriteSheet_11
+      name: Specials_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874fd542fdb8993479fcb1cb502ec145
+      internalID: -1536887143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Specials_SpriteSheet_6
       rect:
         serializedVersion: 2
         x: 32
         y: 32
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ac05408bfb636847a2a09943a72116b
-      internalID: -1348061836
+      spriteID: 113b871373b770542919094e5d89ac12
+      internalID: 256010213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelline_SpriteSheet_12
+      name: Specials_SpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 32
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56aabd22905c58646adb86b75be1d51c
-      internalID: -506514461
+      spriteID: c33c027f75fc2784da74fdb81916e0d7
+      internalID: 127980187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelline_SpriteSheet_13
+      name: Specials_SpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,19 +291,85 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29ec2bc196cd1444a8056aecbd89a38c
-      internalID: -1485073134
+      spriteID: 6bd8b6a2cca43f441a0ed2f94c08e3e3
+      internalID: 998344875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelline_SpriteSheet_14
+      name: Specials_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f39d123bb4b57c4a8ed4862ae57c803
+      internalID: 122723883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Specials_SpriteSheet_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a842ae07e456a84f99537f6790e2b2a
+      internalID: -1435042789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Specials_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4c3e480435fbd46b2dc2b815382bc1
+      internalID: 1206938351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Specials_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -450,19 +379,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a952de122c24c14eaee973339bc92a2
-      internalID: -197114185
+      spriteID: ffe4bc5e2eb72e345b33d7b1ed989aab
+      internalID: 886687638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jelline_SpriteSheet_15
+      name: Specials_SpriteSheet_11
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 32
+        width: 16
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -472,52 +401,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e89eb7506d88bc44cba9ac56c2989cac
-      internalID: 1957359104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelline_SpriteSheet_16
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22ac7732cd48d0b4d857a3302c263b79
-      internalID: 631314181
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jelline_SpriteSheet_17
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78a9c687e4e0f4d4ebb64fb3b6b74ddb
-      internalID: -1932322424
+      spriteID: af63341ed416f594ba937edc12c1f00c
+      internalID: 2019108057
       vertices: []
       indices: 
       edges: []
@@ -526,7 +411,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5c8a11b03e14eb24e85688faeed86b3f
+    spriteID: a27ebd6943052a34a97fe048b80bbca7
     internalID: 0
     vertices: []
     indices: 
@@ -536,26 +421,24 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Jelline_SpriteSheet_0: 3181614918318002740
-      Jelline_SpriteSheet_1: 4015199094774562752
-      Jelline_SpriteSheet_10: -1427129971
-      Jelline_SpriteSheet_11: -1348061836
-      Jelline_SpriteSheet_12: -506514461
-      Jelline_SpriteSheet_13: -1485073134
-      Jelline_SpriteSheet_14: -197114185
-      Jelline_SpriteSheet_15: 1957359104
-      Jelline_SpriteSheet_16: 631314181
-      Jelline_SpriteSheet_17: -1932322424
-      Jelline_SpriteSheet_2: 6939455517483625073
-      Jelline_SpriteSheet_3: 7390920726171224795
-      Jelline_SpriteSheet_4: 53606168709869316
-      Jelline_SpriteSheet_5: 5044283520961567018
-      Jelline_SpriteSheet_6: -484537163284251639
-      Jelline_SpriteSheet_7: 7956645755372501029
-      Jelline_SpriteSheet_8: 2428082384721574277
-      Jelline_SpriteSheet_9: -3521456549096709144
+      Specials_SpriteSheet_0: -8854454983117964916
+      Specials_SpriteSheet_1: 356755616
+      Specials_SpriteSheet_10: 886687638
+      Specials_SpriteSheet_11: 2019108057
+      Specials_SpriteSheet_12: -1435042789
+      Specials_SpriteSheet_13: 1206938351
+      Specials_SpriteSheet_14: 212708537
+      Specials_SpriteSheet_15: -352198233
+      Specials_SpriteSheet_2: 166212153
+      Specials_SpriteSheet_3: 1294692822
+      Specials_SpriteSheet_4: -476665492
+      Specials_SpriteSheet_5: -1536887143
+      Specials_SpriteSheet_6: 256010213
+      Specials_SpriteSheet_7: 127980187
+      Specials_SpriteSheet_8: 998344875
+      Specials_SpriteSheet_9: 122723883
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
