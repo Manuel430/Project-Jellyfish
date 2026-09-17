@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 916766e4745631045b5cbe622a1040a9
+guid: 547ca156470ee2049a1e232c12c4fc9c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6047966130345615872
-    second: NeedleUrkin_SpriteSheet_0
+      213: -2643624214958221644
+    second: UrkinElite_SpriteSheet_0
+  - first:
+      213: -7141588903517754728
+    second: UrkinElite_SpriteSheet_1
+  - first:
+      213: -735221570145404267
+    second: UrkinElite_SpriteSheet_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,79 +106,79 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UrkinNeedle_SpriteSheet_0
+      name: UrkinElite_SpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 16
-        height: 16
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: af28ff9708bc54645aa3e2a5e458bb61
-      internalID: -2134892371
+      spriteID: 4b65bc378c5ff4bd0800000000000000
+      internalID: -2643624214958221644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UrkinNeedle_SpriteSheet_1
+      name: UrkinElite_SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 20ddb51d36c39c64b9877eb9c627bbe7
-      internalID: -1422445238
+      spriteID: 89ae3f1eabaf3ec90800000000000000
+      internalID: -7141588903517754728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UrkinNeedle_SpriteSheet_2
+      name: UrkinElite_SpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
+        x: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 72a659096e4bf4d4a8331f558e7043c8
-      internalID: -339123905
+      spriteID: 59a374890e7fbc5f0800000000000000
+      internalID: -735221570145404267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UrkinNeedle_SpriteSheet_3
+      name: UrkinElite_SpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
+        x: 192
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e539b738e75f6ec44ac3dd9ca20af386
-      internalID: 1275029734
+      spriteID: 3835e9c91fbb96f41af1b5a64bb92fe8
+      internalID: -1807303609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UrkinNeedle_SpriteSheet_4
+      name: UrkinElite_SpriteSheet_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9d62202f158c9e4e9eac37db9c914c5
-      internalID: 1871335696
+      spriteID: 9638fd8babefa2340b3736abfd7901ad
+      internalID: 1695481896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UrkinNeedle_SpriteSheet_5
+      name: UrkinElite_SpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 16
+        x: 64
         y: 0
-        width: 16
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a03850190b95cf14ba5d443e273cb28a
-      internalID: -1156327585
+      spriteID: 6184ce3c8eb96c343b88321f2a25d0eb
+      internalID: 845149515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UrkinNeedle_SpriteSheet_6
+      name: UrkinElite_SpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 32
+        x: 128
         y: 0
-        width: 16
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +253,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dae3617066823cd4eb84e8b3cf548e17
-      internalID: 315654085
+      spriteID: a247f5e222a25af40846fc189b4dbec9
+      internalID: -1297574599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UrkinNeedle_SpriteSheet_7
+      name: UrkinElite_SpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 48
+        x: 192
         y: 0
-        width: 16
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,8 +275,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d927bedbb077cb44b07eb8f41dc65a4
-      internalID: 856575238
+      spriteID: 041ff5b9dcd580546a427ab755ef9f0a
+      internalID: -1031029738
       vertices: []
       indices: 
       edges: []
@@ -279,7 +285,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b8a90b5eb6fec4b43afddcdc3781cf17
+    spriteID: ad95c61c1b380364181977e6eadd162f
     internalID: 0
     vertices: []
     indices: 
@@ -289,16 +295,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      UrkinNeedle_SpriteSheet_0: -2134892371
-      UrkinNeedle_SpriteSheet_1: -1422445238
-      UrkinNeedle_SpriteSheet_2: -339123905
-      UrkinNeedle_SpriteSheet_3: 1275029734
-      UrkinNeedle_SpriteSheet_4: 1871335696
-      UrkinNeedle_SpriteSheet_5: -1156327585
-      UrkinNeedle_SpriteSheet_6: 315654085
-      UrkinNeedle_SpriteSheet_7: 856575238
+      UrkinElite_SpriteSheet_0: -2643624214958221644
+      UrkinElite_SpriteSheet_1: -7141588903517754728
+      UrkinElite_SpriteSheet_2: -735221570145404267
+      UrkinElite_SpriteSheet_3: -1807303609
+      UrkinElite_SpriteSheet_4: 1695481896
+      UrkinElite_SpriteSheet_5: 845149515
+      UrkinElite_SpriteSheet_6: -1297574599
+      UrkinElite_SpriteSheet_7: -1031029738
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
