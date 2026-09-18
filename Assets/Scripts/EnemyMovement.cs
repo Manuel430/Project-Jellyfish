@@ -89,6 +89,11 @@ public class EnemyMovement : MonoBehaviour
             {
                 nextPoint = 0;
             }
+
+            if (movingHorizontal)
+            {
+                FlipEnemy();
+            }
         }
     }
 
