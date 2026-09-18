@@ -28,7 +28,7 @@ public class JellineMovement : MonoBehaviour
     [SerializeField] bool isKnockbackFromRight;
     [SerializeField] bool isKnockbackFromTop;
 
-    #region Public Properties
+    #region Public Methods
     public void StartMoving()
     {
         playerControls.Enable();

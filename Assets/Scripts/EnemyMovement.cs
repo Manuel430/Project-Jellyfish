@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -15,17 +16,27 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] GameObject enemySprite;
     //Flip Enemy Sprite Here
 
+    public bool IsFacingRight()
+    {
+        return isFacingRight;
+    }
+
+    public void CallToFlip()
+    {
+        FlipEnemy();
+    }
+
     private void Awake()
     {
         currentSpeed = moveSpeed;
 
         if(isFacingRight)
         {
-            enemySprite.transform.localScale = new Vector3(1f, 1f, 1f);
+            enemySprite.transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         else
         {
-            enemySprite.transform.localScale = new Vector3(-1f, 1f, 1f);
+            enemySprite.transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
 
@@ -45,8 +56,8 @@ public class EnemyMovement : MonoBehaviour
 
             if (movingHorizontal)
             {
-                enemySprite.transform.localScale = new Vector3(1f, 1f, 1f);
-                isFacingRight = false;
+                enemySprite.transform.localScale = new Vector3(-1f, 1f, 1f);
+                isFacingRight = true;
             }
         }
         else
@@ -78,6 +89,20 @@ public class EnemyMovement : MonoBehaviour
             {
                 nextPoint = 0;
             }
+        }
+    }
+
+    private void FlipEnemy()
+    {
+        isFacingRight = !isFacingRight;
+
+        if (isFacingRight)
+        {
+            enemySprite.transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else
+        {
+            enemySprite.transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
 }
