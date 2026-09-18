@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class JellineMovement : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class JellineMovement : MonoBehaviour
     [SerializeField] float knockbackTime;
     [SerializeField] bool isKnockbackFromRight;
     [SerializeField] bool isKnockbackFromTop;
+
+    Transform teleportLocation;
+    bool canEnter;
 
     #region Public Methods
     public void StartMoving()
@@ -67,6 +71,16 @@ public class JellineMovement : MonoBehaviour
     {
         isKnockbackFromTop = value;
     }
+
+    public void SetTeleportLocation(Transform transform)
+    {
+        teleportLocation = transform;
+    }
+
+    public void SetEnterState(bool doorCheck)
+    {
+        canEnter = doorCheck;
+    }
     #endregion
 
     private void Awake()
@@ -83,6 +97,8 @@ public class JellineMovement : MonoBehaviour
         playerControls.Player.Jump.canceled += Jump;
 
         playerControls.Player.Twirl.performed += Twirl;
+
+        playerControls.Player.Enter.performed += Enter;
     }
 
     private void FixedUpdate()
@@ -157,8 +173,26 @@ public class JellineMovement : MonoBehaviour
 
         if (context.performed)
         {
-            Debug.Log("Twirl activated");
             StartCoroutine(TwirlCoroutine());
+        }
+    }
+
+    private void Enter(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if(!isTwirling)
+            {
+                if (canEnter)
+                {
+                    Debug.Log("Door located! Teleporting...");
+                    gameObject.transform.position = teleportLocation.transform.position;
+                }
+                else
+                {
+                    Debug.LogWarning("You are not near a door");
+                }
+            }
         }
     }
 

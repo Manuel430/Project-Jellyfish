@@ -118,6 +118,15 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Enter"",
+                    ""type"": ""Button"",
+                    ""id"": ""d172f44d-2710-478d-bd4d-1aa923908572"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -175,6 +184,17 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
                     ""action"": ""Twirl"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ec3dfd9-d9f1-41b9-a053-c5128862d563"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Enter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -186,6 +206,7 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Twirl = m_Player.FindAction("Twirl", throwIfNotFound: true);
+        m_Player_Enter = m_Player.FindAction("Enter", throwIfNotFound: true);
     }
 
     ~@PlayerControlsScript()
@@ -269,6 +290,7 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Twirl;
+    private readonly InputAction m_Player_Enter;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -292,6 +314,10 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Twirl".
         /// </summary>
         public InputAction @Twirl => m_Wrapper.m_Player_Twirl;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Enter".
+        /// </summary>
+        public InputAction @Enter => m_Wrapper.m_Player_Enter;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -327,6 +353,9 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
             @Twirl.started += instance.OnTwirl;
             @Twirl.performed += instance.OnTwirl;
             @Twirl.canceled += instance.OnTwirl;
+            @Enter.started += instance.OnEnter;
+            @Enter.performed += instance.OnEnter;
+            @Enter.canceled += instance.OnEnter;
         }
 
         /// <summary>
@@ -347,6 +376,9 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
             @Twirl.started -= instance.OnTwirl;
             @Twirl.performed -= instance.OnTwirl;
             @Twirl.canceled -= instance.OnTwirl;
+            @Enter.started -= instance.OnEnter;
+            @Enter.performed -= instance.OnEnter;
+            @Enter.canceled -= instance.OnEnter;
         }
 
         /// <summary>
@@ -408,5 +440,12 @@ public partial class @PlayerControlsScript: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnTwirl(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Enter" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnEnter(InputAction.CallbackContext context);
     }
 }

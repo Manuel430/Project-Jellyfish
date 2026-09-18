@@ -8,7 +8,11 @@ public class RoomManagement : MonoBehaviour
     [Header("Player")]
     [SerializeField] GameObject player;
 
-    //Add enemy spawn system later
+    [Header("Enemy")]
+    [SerializeField] GameObject[] enemiesInRoom;
+
+    [Header("Starting Room")]
+    [SerializeField] bool isStartingRoom;
 
     private void Awake()
     {
@@ -17,6 +21,20 @@ public class RoomManagement : MonoBehaviour
         {
             Debug.LogError("Player not found in the scene.");
         }
+
+        if(enemiesInRoom.Length != 0)
+        {
+            if(isStartingRoom)
+            {
+                Debug.Log("Room keeps enemies");
+                return;
+            }
+            foreach (GameObject enemy in enemiesInRoom)
+            {
+                int enemyIndex = System.Array.IndexOf(enemiesInRoom, enemy);
+                enemiesInRoom[enemyIndex].SetActive(false);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +42,15 @@ public class RoomManagement : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             virtualCamera.SetActive(true);
+
+            if (enemiesInRoom.Length != 0)
+            {
+                foreach (GameObject enemy in enemiesInRoom)
+                {
+                    int enemyIndex = System.Array.IndexOf(enemiesInRoom, enemy);
+                    enemiesInRoom[enemyIndex].SetActive(true);
+                }
+            }
         }
     }
 
@@ -32,6 +59,15 @@ public class RoomManagement : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             virtualCamera.SetActive(false);
+
+            if (enemiesInRoom.Length != 0)
+            {
+                foreach (GameObject enemy in enemiesInRoom)
+                {
+                    int enemyIndex = System.Array.IndexOf(enemiesInRoom, enemy);
+                    enemiesInRoom[enemyIndex].SetActive(false);
+                }
+            }
         }
     }
 }

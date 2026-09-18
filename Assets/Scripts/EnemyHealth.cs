@@ -26,6 +26,13 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        currentHealth = maxHealth;
+
+        visualSprite.color = defaultColor;
+    }
+
     public void TakeDamage(int damage)
     {
         StartCoroutine(FlashDamageColor());
