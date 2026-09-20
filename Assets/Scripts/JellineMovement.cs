@@ -215,6 +215,7 @@ public class JellineMovement : MonoBehaviour
                     transitionPanel.SetActive(true);
                     Debug.Log("Door located! Teleporting...");
                     gameObject.transform.position = teleportLocation.transform.position;
+                    StopMoving();
                 }
                 else
                 {

@@ -3,10 +3,12 @@ using UnityEngine.UI;
 
 public class TransitionPanel : MonoBehaviour
 {
-    [Header("Image")]
-    [SerializeField] Image transitionPanel;
+    [Header("Player")]
+    [SerializeField] JellineMovement player;
 
-    private void OnEnable()
+    public void FinishTransition()
     {
+        gameObject.SetActive(false);
+        player.StartMoving();
     }
 }
