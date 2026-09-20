@@ -1,6 +1,7 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class JellineHealth : MonoBehaviour
 {
@@ -20,17 +21,22 @@ public class JellineHealth : MonoBehaviour
     [Header("Animator")]
     [SerializeField] JellineAnimation playerAnim;
 
-    [Header("UI")]
+    [Header("Health UI")]
     [SerializeField] Image[] hearts;
     [SerializeField] Sprite heartFull;
     [SerializeField] Sprite heartEmpty;
 
     [Header("Lives")]
-    [Range(0, 99)] [SerializeField] float currentLives;
-    [SerializeField] float startingLives;
+    [Range(0, 99)] [SerializeField] int currentLives;
+    [SerializeField] int startingLives;
 
     [Header("Respawn")]
     [SerializeField] Transform respawnPoint;
+
+    [Header("LivesUI")]
+    [SerializeField] Sprite[] livesNumber;
+    [SerializeField] GameObject livesNumberFront;
+    [SerializeField] GameObject livesNumberBack;
 
     #region Public Methods
     public int GetHealth()
@@ -58,6 +64,11 @@ public class JellineHealth : MonoBehaviour
         LoseLife();
     }
 
+    public void GivingLife()
+    {
+        AddLife();
+    }
+
     public void SetRespawnPoint(Transform newPoint)
     {
         respawnPoint = newPoint;
@@ -71,6 +82,8 @@ public class JellineHealth : MonoBehaviour
         UpdateUI();
 
         currentLives = startingLives;
+
+        UpdateLivesUI();
     }
 
     private int DamageAmount(int damage)
@@ -94,6 +107,7 @@ public class JellineHealth : MonoBehaviour
         {
             playerAnim.PlayAnimHit();
             StartCoroutine(FlashDamageColor());
+
         }
             return health;
     }
@@ -128,6 +142,23 @@ public class JellineHealth : MonoBehaviour
         }
     }
 
+    private void UpdateLivesUI()
+    {
+        if(currentLives < 10)
+        {
+            livesNumberFront.GetComponent<Image>().sprite = livesNumber[0];
+            livesNumberBack.GetComponent<Image>().sprite = livesNumber[currentLives];
+        }
+        else
+        {
+            int firstDigit = currentLives / 10;
+            int secondDigit = currentLives % 10;
+
+            livesNumberFront.GetComponent<Image>().sprite = livesNumber[firstDigit];
+            livesNumberBack.GetComponent<Image>().sprite = livesNumber[secondDigit];
+        }
+    }
+
     IEnumerator FlashDamageColor()
     {
         if(visualSprite != null)
@@ -148,9 +179,22 @@ public class JellineHealth : MonoBehaviour
         }
         else
         {
+            UpdateLivesUI();
+
             gameObject.transform.position = respawnPoint.position;
             Heal(maxHealth);
             UpdateUI();
+            playerAnim.ResetGameOverTrigger();
+            playerAnim.PlayAnimRespawn();
+
+            playerMovement.StartMoving();
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
+    }
+
+    private void AddLife()
+    {
+        currentLives++;
+        UpdateLivesUI();
     }
 }

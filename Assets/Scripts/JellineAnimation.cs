@@ -12,6 +12,11 @@ public class JellineAnimation : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    public bool GetRespawnTrigger()
+    {
+        return animator.GetBool("Respawn");
+    }
+
     public void ResetHitTrigger()
     {
         animator.ResetTrigger("Hit");
@@ -20,6 +25,11 @@ public class JellineAnimation : MonoBehaviour
     public void ResetGameOverTrigger()
     {
         animator.ResetTrigger("GameOver");
+    }
+
+    public void ResetRespawnTrigger()
+    {
+        animator.ResetTrigger("Respawn");
     }
 
     public void PlayAnimMove(bool isMoving)
@@ -45,6 +55,11 @@ public class JellineAnimation : MonoBehaviour
     public void PlayAnimGameOver()
     {
         animator.SetTrigger("GameOver");
+    }
+
+    public void PlayAnimRespawn()
+    {
+        animator.SetTrigger("Respawn");
     }
 
     public void LoseLife()
