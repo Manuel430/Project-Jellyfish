@@ -328,6 +328,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1686968489324750096, guid: 24ce3b5b78ea75b48a4b3d962f75939e, type: 3}
+    - target: {fileID: 2596509456052270681, guid: 5fca5f99af3bdf04c92df7997a00611e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2778850874167489274, guid: 5fca5f99af3bdf04c92df7997a00611e, type: 3}
       propertyPath: damageAmount
       value: 1

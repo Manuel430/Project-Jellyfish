@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class JellineAnimation : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] JellineHealth playerHealth;
+
     Animator animator;
 
     private void Awake()
@@ -42,5 +45,10 @@ public class JellineAnimation : MonoBehaviour
     public void PlayAnimGameOver()
     {
         animator.SetTrigger("GameOver");
+    }
+
+    public void LoseLife()
+    {
+        playerHealth.LosingLife();
     }
 }

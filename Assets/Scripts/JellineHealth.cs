@@ -25,6 +25,13 @@ public class JellineHealth : MonoBehaviour
     [SerializeField] Sprite heartFull;
     [SerializeField] Sprite heartEmpty;
 
+    [Header("Lives")]
+    [Range(0, 99)] [SerializeField] float currentLives;
+    [SerializeField] float startingLives;
+
+    [Header("Respawn")]
+    [SerializeField] Transform respawnPoint;
+
     #region Public Methods
     public int GetHealth()
     {
@@ -45,6 +52,16 @@ public class JellineHealth : MonoBehaviour
     {
         Heal(heal);
     }
+
+    public void LosingLife()
+    {
+        LoseLife();
+    }
+
+    public void SetRespawnPoint(Transform newPoint)
+    {
+        respawnPoint = newPoint;
+    }
     #endregion
 
     private void Awake()
@@ -52,6 +69,8 @@ public class JellineHealth : MonoBehaviour
         health = maxHealth;
 
         UpdateUI();
+
+        currentLives = startingLives;
     }
 
     private int DamageAmount(int damage)
@@ -69,7 +88,7 @@ public class JellineHealth : MonoBehaviour
             playerAnim.PlayAnimGameOver();
 
             //Add Game Over UI later
-            //Check on how many Lives left later
+
         }
         else
         {
@@ -116,6 +135,22 @@ public class JellineHealth : MonoBehaviour
             visualSprite.color = damageColor;
             yield return new WaitForSeconds(0.1f);
             visualSprite.color = defaultColor;
+        }
+    }
+
+    private void LoseLife()
+    {
+        currentLives--;
+
+        if(currentLives < 0)
+        {
+            Debug.Log("GameOver");
+        }
+        else
+        {
+            gameObject.transform.position = respawnPoint.position;
+            Heal(maxHealth);
+            UpdateUI();
         }
     }
 }
