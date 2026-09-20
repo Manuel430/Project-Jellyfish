@@ -522,6 +522,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Jelline_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d994ecc72d531458db86860bfa75d6
+      internalID: -1302730968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jelline_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a3d85a0d5fbe248af2bd8efdd16f6e
+      internalID: -751566060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -548,6 +592,8 @@ TextureImporter:
       Jelline_SpriteSheet_15: 1957359104
       Jelline_SpriteSheet_16: 631314181
       Jelline_SpriteSheet_17: -1932322424
+      Jelline_SpriteSheet_18: -1302730968
+      Jelline_SpriteSheet_19: -751566060
       Jelline_SpriteSheet_2: 6939455517483625073
       Jelline_SpriteSheet_3: 7390920726171224795
       Jelline_SpriteSheet_4: 53606168709869316

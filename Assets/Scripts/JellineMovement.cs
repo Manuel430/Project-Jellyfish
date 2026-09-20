@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class JellineMovement : MonoBehaviour
 {
@@ -8,8 +7,11 @@ public class JellineMovement : MonoBehaviour
     PlayerControlsScript playerControls;
     Rigidbody2D rb;
 
-    // Set Animations Here
-
+    [Header("Animations")]
+    [SerializeField] JellineAnimation playerAnim;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] LayerMask groundLayer;
+    
     [Header("Stats")]
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpForce;
@@ -28,6 +30,9 @@ public class JellineMovement : MonoBehaviour
     [SerializeField] float knockbackTime;
     [SerializeField] bool isKnockbackFromRight;
     [SerializeField] bool isKnockbackFromTop;
+
+    [Header("UI")]
+    [SerializeField] GameObject transitionPanel;
 
     Transform teleportLocation;
     bool canEnter;
@@ -99,6 +104,20 @@ public class JellineMovement : MonoBehaviour
         playerControls.Player.Twirl.performed += Twirl;
 
         playerControls.Player.Enter.performed += Enter;
+
+        transitionPanel.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (IsGrounded())
+        {
+            playerAnim.PlayAnimGrounded(true);
+        }
+        else
+        {
+            playerAnim.PlayAnimGrounded(false);
+        }
     }
 
     private void FixedUpdate()
@@ -140,16 +159,23 @@ public class JellineMovement : MonoBehaviour
 
     private void Flip() { transform.localScale = new Vector3(Mathf.Sign(horizontal), 1f, 1f); }
 
+    private bool IsGrounded() { return Physics2D.OverlapBox(groundCheck.position, new Vector2(1.3f, 0.1f), 0f, groundLayer); }
+
     private void Move(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             horizontal = context.ReadValue<Vector2>().x;
+
+            playerAnim.PlayAnimMove(true);
+
             Flip();
         }
         else if(context.canceled)
         {
             horizontal = 0f;
+
+            playerAnim.PlayAnimMove(false);
         }
     }
 
@@ -173,6 +199,7 @@ public class JellineMovement : MonoBehaviour
 
         if (context.performed)
         {
+            playerAnim.PlayAnimTwirling(true);
             StartCoroutine(TwirlCoroutine());
         }
     }
@@ -185,6 +212,7 @@ public class JellineMovement : MonoBehaviour
             {
                 if (canEnter)
                 {
+                    transitionPanel.SetActive(true);
                     Debug.Log("Door located! Teleporting...");
                     gameObject.transform.position = teleportLocation.transform.position;
                 }
@@ -210,18 +238,21 @@ public class JellineMovement : MonoBehaviour
             {
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
             }
-            
+
             rb.linearVelocityX = twirlPower * transform.localScale.x;
             twirlTimer += Time.deltaTime;
             yield return null;
         }
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        playerAnim.PlayAnimTwirling(false);
         isTwirling = false;
     }
 
     // Debugging
     private void OnDrawGizmosSelected()
     {
-        // Draw a line to represent the movement direction
+        Gizmos.color = Color.yellow;
+
+        Gizmos.DrawWireCube(groundCheck.position,new Vector3(1.3f, 0.1f, 1f));
     }
 }

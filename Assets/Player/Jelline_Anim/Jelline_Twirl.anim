@@ -22,13 +22,11 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -484537163284251639, guid: 3e7292b4f29a30346abf5f6b3273e95a, type: 3}
-    - time: 0.083333336
+    - time: 0.041666668
       value: {fileID: 7956645755372501029, guid: 3e7292b4f29a30346abf5f6b3273e95a, type: 3}
-    - time: 0.16666667
+    - time: 0.083333336
       value: {fileID: 2428082384721574277, guid: 3e7292b4f29a30346abf5f6b3273e95a, type: 3}
-    - time: 0.25
-      value: {fileID: -3521456549096709144, guid: 3e7292b4f29a30346abf5f6b3273e95a, type: 3}
-    - time: 0.29166666
+    - time: 0.125
       value: {fileID: -3521456549096709144, guid: 3e7292b4f29a30346abf5f6b3273e95a, type: 3}
     attribute: m_Sprite
     path: Jelline Sprite
@@ -56,13 +54,12 @@ AnimationClip:
     - {fileID: 7956645755372501029, guid: 3e7292b4f29a30346abf5f6b3273e95a, type: 3}
     - {fileID: 2428082384721574277, guid: 3e7292b4f29a30346abf5f6b3273e95a, type: 3}
     - {fileID: -3521456549096709144, guid: 3e7292b4f29a30346abf5f6b3273e95a, type: 3}
-    - {fileID: -3521456549096709144, guid: 3e7292b4f29a30346abf5f6b3273e95a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.3333333
+    m_StopTime: 0.16666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

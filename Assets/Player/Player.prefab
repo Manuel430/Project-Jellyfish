@@ -125,6 +125,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8243583393723504768}
+  - {fileID: 7864671783113893491}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4207955393598588810
@@ -212,6 +213,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341582bcc1e65654f9dc08a776ecea14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JellineMovement
+  playerAnim: {fileID: 4519552966994142431}
+  groundCheck: {fileID: 7864671783113893491}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
   moveSpeed: 5
   jumpForce: 10
   isTwirling: 0
@@ -235,8 +241,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1417eccd59377439678893b425259b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JellineHealth
+  playerMovement: {fileID: 3764816827083568103}
   health: 0
   maxHealth: 10
+  visualSprite: {fileID: 7398184021822797111}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  damageColor: {r: 1, g: 1, b: 1, a: 0}
+  playerAnim: {fileID: 4519552966994142431}
+--- !u!1 &4838001928788943535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7864671783113893491}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7864671783113893491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4838001928788943535}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6031699551954920632}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7341179901932792569
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8243583393723504768}
   - component: {fileID: 135180322718833077}
+  - component: {fileID: 4519552966994142431}
   m_Layer: 0
   m_Name: Jelline
   m_TagString: Untagged
@@ -292,3 +335,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4519552966994142431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341179901932792569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb9b6b5db21a1b0449c45de203c7e292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JellineAnimation
