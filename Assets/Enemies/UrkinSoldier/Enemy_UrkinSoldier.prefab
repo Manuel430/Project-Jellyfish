@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4373966911789378649, guid: 5fca5f99af3bdf04c92df7997a00611e, type: 3}
+      propertyPath: deathEffectPrefab
+      value: 
+      objectReference: {fileID: 6584412689454668043, guid: c44c76973edf8034499de59499f8e478, type: 3}
     - target: {fileID: 6088390419108540816, guid: 5fca5f99af3bdf04c92df7997a00611e, type: 3}
       propertyPath: m_Name
       value: UrkinSoldier

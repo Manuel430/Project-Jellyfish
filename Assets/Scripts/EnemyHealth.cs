@@ -50,7 +50,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(deathEffectPrefab != null)
         {
-            Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+            Instantiate(deathEffectPrefab, transform.position,transform.rotation);
         }
 
         gameObject.SetActive(false);
