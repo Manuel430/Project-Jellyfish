@@ -44,6 +44,13 @@ public class BossHealth : MonoBehaviour
         victoryItem.SetActive(false);
     }
 
+    private void OnDisable()
+    {
+        currentHealth = maxHealth;
+
+        UpdateUI();
+    }
+
     public void TakeDamage(int damage)
     {
         StartCoroutine(FlashDamageColor());

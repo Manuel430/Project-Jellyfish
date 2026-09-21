@@ -15,7 +15,7 @@ public class MusicChanger : MonoBehaviour
             musicManager.clip = bossMusic;
             musicManager.Play();
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

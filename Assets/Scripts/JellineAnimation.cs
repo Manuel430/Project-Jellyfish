@@ -4,6 +4,7 @@ public class JellineAnimation : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] JellineHealth playerHealth;
+    [SerializeField] GameObject bossMusic;
 
     [Header("Audio")]
     [SerializeField] AudioSource musicManager;
@@ -91,6 +92,11 @@ public class JellineAnimation : MonoBehaviour
         musicManager.clip = themeSong;
         musicManager.loop = true;
         musicManager.Play();
+
+        if (!bossMusic.activeInHierarchy)
+        {
+            bossMusic.SetActive(true);
+        }
 
         animator.SetTrigger("Respawn");
     }
