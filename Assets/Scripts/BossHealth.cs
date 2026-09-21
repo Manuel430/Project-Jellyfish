@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemyHealth : MonoBehaviour
+public class BossHealth : MonoBehaviour
 {
     [Header("Health")]
     [SerializeField] int currentHealth;
@@ -13,7 +13,10 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] Color damageColor;
 
     [Header("Death")]
-    [SerializeField] GameObject deathEffectPrefab;
+    [SerializeField] GameObject explosionPrefab;
+    [SerializeField] GameObject victoryPrefab;
+
+    //DeathAnimation
 
     private void Awake()
     {
@@ -23,13 +26,6 @@ public class EnemyHealth : MonoBehaviour
         {
             visualSprite.color = defaultColor;
         }
-    }
-
-    private void OnEnable()
-    {
-        currentHealth = maxHealth;
-
-        visualSprite.color = defaultColor;
     }
 
     public void TakeDamage(int damage)
@@ -45,14 +41,15 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
-        if(deathEffectPrefab != null)
+        //Debug
+        if(victoryPrefab != null)
         {
-            Instantiate(deathEffectPrefab, transform.position,transform.rotation);
+            Instantiate(victoryPrefab, transform.position, transform.rotation);
         }
 
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     IEnumerator FlashDamageColor()

@@ -86,6 +86,11 @@ public class JellineMovement : MonoBehaviour
     {
         canEnter = doorCheck;
     }
+
+    public void TurnOnTransition()
+    {
+        transitionPanel.SetActive(true);
+    }
     #endregion
 
     private void Awake()

@@ -181,6 +181,8 @@ public class JellineHealth : MonoBehaviour
         {
             UpdateLivesUI();
 
+            playerMovement.TurnOnTransition();
+
             gameObject.transform.position = respawnPoint.position;
             Heal(maxHealth);
             UpdateUI();
