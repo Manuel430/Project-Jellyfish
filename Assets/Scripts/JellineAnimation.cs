@@ -62,6 +62,11 @@ public class JellineAnimation : MonoBehaviour
         animator.SetTrigger("Respawn");
     }
 
+    public void PlayAnimWin()
+    {
+        animator.SetTrigger("Win");
+    }
+
     public void LoseLife()
     {
         playerHealth.LosingLife();

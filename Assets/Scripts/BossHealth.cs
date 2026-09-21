@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BossHealth : MonoBehaviour
@@ -13,10 +14,18 @@ public class BossHealth : MonoBehaviour
     [SerializeField] Color damageColor;
 
     [Header("Death")]
-    [SerializeField] GameObject explosionPrefab;
-    [SerializeField] GameObject victoryPrefab;
+    [SerializeField] GameObject victoryItem;
 
-    //DeathAnimation
+    [Header("Animation")]
+    [SerializeField] Animator bossAnimator;
+
+    [Header("Boss")]
+    [SerializeField] MsPuffer msPuffer;
+
+    [Header("UI")]
+    [SerializeField] Image[] hearts;
+    [SerializeField] Sprite heartFull;
+    [SerializeField] Sprite heartEmpty;
 
     private void Awake()
     {
@@ -26,6 +35,10 @@ public class BossHealth : MonoBehaviour
         {
             visualSprite.color = defaultColor;
         }
+
+        UpdateUI();
+
+        victoryItem.SetActive(false);
     }
 
     public void TakeDamage(int damage)
@@ -33,6 +46,8 @@ public class BossHealth : MonoBehaviour
         StartCoroutine(FlashDamageColor());
 
         currentHealth -= damage;
+
+        UpdateUI();
 
         if(currentHealth <= 0)
         {
@@ -43,13 +58,31 @@ public class BossHealth : MonoBehaviour
 
     public void Die()
     {
-        //Debug
-        if(victoryPrefab != null)
+        if (msPuffer != null)
         {
-            Instantiate(victoryPrefab, transform.position, transform.rotation);
+            msPuffer.StopMoving();
+        }
+        if (victoryItem != null)
+        {
+            victoryItem.SetActive(true);
         }
 
-        Destroy(gameObject);
+        bossAnimator.SetTrigger("Dead");
+    }
+
+    private void UpdateUI()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if(i < currentHealth)
+            {
+                hearts[i].sprite = heartFull;
+            }
+            else
+            {
+                hearts[i].sprite = heartEmpty;
+            }
+        }
     }
 
     IEnumerator FlashDamageColor()

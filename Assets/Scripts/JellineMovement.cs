@@ -33,6 +33,7 @@ public class JellineMovement : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] GameObject transitionPanel;
+    [SerializeField] GameObject congratsPanel;
 
     Transform teleportLocation;
     bool canEnter;
@@ -50,6 +51,12 @@ public class JellineMovement : MonoBehaviour
         playerControls.Disable();
 
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+    public void EndGame()
+    {
+        playerControls.Disable();
+        playerAnim.PlayAnimWin();
     }
 
     public void HitBouncyObject()
@@ -90,6 +97,11 @@ public class JellineMovement : MonoBehaviour
     public void TurnOnTransition()
     {
         transitionPanel.SetActive(true);
+    }
+
+    public void Congratulations()
+    {
+        congratsPanel.SetActive(true);
     }
     #endregion
 
