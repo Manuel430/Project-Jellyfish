@@ -33,7 +33,12 @@ public class JellineMovement : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] GameObject transitionPanel;
-    [SerializeField] GameObject congratsPanel;
+    [SerializeField] GameObject pauseUI;
+    bool isPaused = false;
+    bool cannotPause = false;
+
+    [Header("Audio")]
+    [SerializeField] AudioSource musicManager;
 
     Transform teleportLocation;
     bool canEnter;
@@ -44,6 +49,8 @@ public class JellineMovement : MonoBehaviour
         playerControls.Enable();
 
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        cannotPause = false;
     }
 
     public void StopMoving()
@@ -51,12 +58,16 @@ public class JellineMovement : MonoBehaviour
         playerControls.Disable();
 
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
+        cannotPause = true;
     }
 
     public void EndGame()
     {
         playerControls.Disable();
         playerAnim.PlayAnimWin();
+
+        cannotPause = true;
     }
 
     public void HitBouncyObject()
@@ -99,10 +110,6 @@ public class JellineMovement : MonoBehaviour
         transitionPanel.SetActive(true);
     }
 
-    public void Congratulations()
-    {
-        congratsPanel.SetActive(true);
-    }
     #endregion
 
     private void Awake()
@@ -121,6 +128,10 @@ public class JellineMovement : MonoBehaviour
         playerControls.Player.Twirl.performed += Twirl;
 
         playerControls.Player.Enter.performed += Enter;
+
+        playerControls.Player.Pause.performed += Pause;
+
+        playerControls.Player.Quit.performed += Quit;
 
         transitionPanel.SetActive(false);
     }
@@ -240,6 +251,33 @@ public class JellineMovement : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void Pause(InputAction.CallbackContext context)
+    {
+        if(cannotPause) { return; }
+
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+            musicManager.Pause();
+
+            pauseUI.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            musicManager.Play();
+
+            pauseUI.SetActive(false);
+        }
+    }
+
+    private void Quit(InputAction.CallbackContext context)
+    {
+        Application.Quit();
     }
 
     private System.Collections.IEnumerator TwirlCoroutine()

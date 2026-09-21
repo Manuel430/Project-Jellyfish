@@ -5,11 +5,40 @@ public class JellineAnimation : MonoBehaviour
     [Header("References")]
     [SerializeField] JellineHealth playerHealth;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource musicManager;
+    [SerializeField] AudioClip themeSong;
+    [SerializeField] AudioClip victoryMusic;
+    [SerializeField] AudioClip defeatMusic;
+
+    [Header("UI")]
+    [SerializeField] GameObject congratsUI;
+
     Animator animator;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+    }
+
+    public void Congratulations()
+    {
+        congratsUI.SetActive(true);
+    }
+
+    public void PlayVictorySong()
+    {
+        musicManager.clip = victoryMusic;
+        musicManager.loop = false;
+        musicManager.Play();
+    }
+
+    public void PlayDefeatedSong()
+    {
+        musicManager.Stop();
+        musicManager.clip = defeatMusic;
+        musicManager.loop = false;
+        musicManager.Play();
     }
 
     public bool GetRespawnTrigger()
@@ -59,6 +88,10 @@ public class JellineAnimation : MonoBehaviour
 
     public void PlayAnimRespawn()
     {
+        musicManager.clip = themeSong;
+        musicManager.loop = true;
+        musicManager.Play();
+
         animator.SetTrigger("Respawn");
     }
 

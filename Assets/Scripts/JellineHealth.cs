@@ -1,12 +1,12 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class JellineHealth : MonoBehaviour
 {
     [Header("Reference")]
     [SerializeField] JellineMovement playerMovement;
+    [SerializeField] GameObject gameOverUI;
 
     [Header("Health")]
     [SerializeField] int health;
@@ -84,6 +84,8 @@ public class JellineHealth : MonoBehaviour
         currentLives = startingLives;
 
         UpdateLivesUI();
+
+        gameOverUI.SetActive(false);
     }
 
     private int DamageAmount(int damage)
@@ -93,14 +95,11 @@ public class JellineHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            //Check on UI later
             health = 0;
             Debug.Log("Jelline is dead");
 
             playerMovement.StopMoving();
             playerAnim.PlayAnimGameOver();
-
-            //Add Game Over UI later
 
         }
         else
@@ -122,7 +121,6 @@ public class JellineHealth : MonoBehaviour
         {
             health = maxHealth;
         }
-        //Check on UI later
 
         return health;
     }
@@ -176,6 +174,7 @@ public class JellineHealth : MonoBehaviour
         if(currentLives < 0)
         {
             Debug.Log("GameOver");
+            gameOverUI.SetActive(true);
         }
         else
         {

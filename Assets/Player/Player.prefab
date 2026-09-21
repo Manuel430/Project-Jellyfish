@@ -252,6 +252,12 @@ MonoBehaviour:
   hearts: []
   heartFull: {fileID: 0}
   heartEmpty: {fileID: 0}
+  currentLives: 0
+  startingLives: 0
+  respawnPoint: {fileID: 0}
+  livesNumber: []
+  livesNumberFront: {fileID: 0}
+  livesNumberBack: {fileID: 0}
 --- !u!1 &4838001928788943535
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,3 +357,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9b6b5db21a1b0449c45de203c7e292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JellineAnimation
+  playerHealth: {fileID: 0}
+  musicManager: {fileID: 0}
+  themeSong: {fileID: 0}
+  victoryMusic: {fileID: 0}
+  defeatMusic: {fileID: 0}
+  congratsUI: {fileID: 0}

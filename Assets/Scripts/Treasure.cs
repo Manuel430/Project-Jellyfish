@@ -7,6 +7,11 @@ public class Treasure : MonoBehaviour
     [SerializeField] float itemSpeed;
     float distanceToPoint;
 
+    private void Awake()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void Update()
     {
         MoveDown();

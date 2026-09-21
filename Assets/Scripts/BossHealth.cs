@@ -27,6 +27,9 @@ public class BossHealth : MonoBehaviour
     [SerializeField] Sprite heartFull;
     [SerializeField] Sprite heartEmpty;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource musicManager;
+
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -66,6 +69,8 @@ public class BossHealth : MonoBehaviour
         {
             victoryItem.SetActive(true);
         }
+
+        musicManager.Stop();
 
         bossAnimator.SetTrigger("Dead");
     }
